@@ -23,7 +23,7 @@ const cors = require('cors');
 app.use(cors());
 
 // Initialize the main project folder
-app.use(express.static('src/client'));
+app.use(express.static('dist'));
 
 app.get('/', function(req, res) {
     res.sendFile('dist/index.html');
@@ -40,26 +40,3 @@ function listen() {
     console.log("server running");
     console.log(`running on localhost: ${port}`);
 }
-
-
-// get Route to return project data object
-
-app.get('/all', (request, response) => {
-    response.send(projectData);
-});
-
-
-// post route to add data received from API
-
-app.post('/addData', (request, response) => {
-    console.log(request.body);
-
-    const d = request.body;
-
-    projectData['temp'] = d.temp;
-    projectData['date'] = d.date;
-    projectData['resp'] = d.resp;
-
-    console.log('projectData: ', projectData);
-
-});
