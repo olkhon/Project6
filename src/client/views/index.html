@@ -16,13 +16,26 @@
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <div>
-        test
-    </div>
-    <script src="" async defer></script>
-</body>
+    <div id="app">
+        <div class="holder headline">
+            Final Project
+        </div>
+        <div class="holder city">
+            <label for="city">Enter city code here</label>
+            <input type="text" id="city" placeholder="enter city here">
+        </div>
+        <div class="holder feel">
+            <label for="feelings">How are you feeling today?</label>
+            <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
+            <button id="generate" type="submit"> Generate </button>
+        </div>
+        <div class="holder entry">
+            <div class="title">Most Recent Entry</div>
+            <div id="entryHolder">
+                <div id="date"></div>
+                <div id="temp"></div>
+                <div id="content"></div>
+            </div>
+        </div>
 
 </html>
