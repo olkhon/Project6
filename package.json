@@ -1,8 +1,6 @@
 {
-    "name": "server.js",
+    "name": "Last-Project",
     "version": "1.0.0",
-    "description": "Weather-Journal App Project\r Overview\r This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI.",
-    "main": "server.js",
     "dependencies": {
         "body-parser": "^1.19.0",
         "cors": "^2.8.5",
@@ -25,7 +23,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node src/server/server.js",
         "build": "webpack",
-        "dev": "webpack-dev-server webpack --config webpack.dev.js --open",
+        "dev": "webpack-dev-server --config webpack.dev.js --open",
         "prod": "webpack --config webpack.prod.js"
     },
     "repository": {
