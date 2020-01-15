@@ -17,6 +17,10 @@ app.use(bodyParser.urlencoded({
 }));
 
 
+// dotenv for hiding credentials in env file
+const dotenv = require('dotenv');
+dotenv.config();
+
 // Cors for cross origin allowance
 
 const cors = require('cors');

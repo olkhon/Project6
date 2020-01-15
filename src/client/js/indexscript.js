@@ -1,7 +1,7 @@
-function test() {
-    alert('test')
+function getWeather() {
+    document.getElementById
 }
 
 export {
-    test
+    getWeather
 }
