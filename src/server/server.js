@@ -1,3 +1,10 @@
+/* Middleware*/
+
+const bodyParser = require('body-parser');
+
+// Setup empty JS object to act as endpoint for all routes
+projectData = {};
+
 // Require Express to run server and routes
 
 const express = require('express');
@@ -6,9 +13,6 @@ const express = require('express');
 
 const app = express();
 
-/* Middleware*/
-
-const bodyParser = require('body-parser');
 
 //Configuring express to use body-parser as middle-ware.
 app.use(bodyParser.json());
@@ -44,3 +48,25 @@ function listen() {
     console.log("server running");
     console.log(`running on localhost: ${port}`);
 }
+
+// get Route to return project data object
+
+app.get('localhost:5501/all', (request, response) => {
+    response.send(projectData);
+});
+
+
+// post route to add data received from API
+
+app.post('localhost:5501/addData', (request, response) => {
+    console.log(request.body);
+
+    const d = request.body;
+
+    projectData['temp'] = d.temp;
+    projectData['date'] = d.date;
+    projectData['resp'] = d.resp;
+
+    console.log('projectData: ', projectData);
+
+});

@@ -15,14 +15,19 @@
     <link rel="stylesheet" href="">
 </head>
 
+
 <body>
     <div id="app">
         <div class="holder headline">
             Weather Journal App
         </div>
-        <div class="holder City">
-            <label for="city">Enter City code here</label>
-            <input type="text" id="city" placeholder="enter city code here">
+        <div class="holder zip">
+            <label for="zip">Enter Zip code here</label>
+            <input type="text" id="zip" placeholder="enter zip code here">
+        </div>
+        <div class="holder feel">
+            <label for="feelings">How are you feeling today?</label>
+            <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
             <button id="generate" type="submit"> Generate </button>
         </div>
         <div class="holder entry">

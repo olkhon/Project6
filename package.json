@@ -29,12 +29,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/olkhon/WeatherApp.git"
+        "url": "git+https://github.com/olkhon/Project6.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/olkhon/WeatherApp/issues"
+        "url": "https://github.com/olkhon/Project6/issues"
     },
-    "homepage": "https://github.com/olkhon/WeatherApp#readme"
+    "homepage": "https://github.com/olkhon/Project6#readme"
 }
