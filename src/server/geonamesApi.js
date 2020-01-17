@@ -19,4 +19,4 @@ async function getCoordinates(userCity) {
     }
 }
 
-module.exports(getCoordinates);
+module.exports = getCoordinates;
