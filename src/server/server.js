@@ -58,7 +58,7 @@ app.get('localhost:5501/all', (request, response) => {
 
 // post route to add data received from API
 
-app.post('localhost:5501/addData', (request, response) => {
+app.post('/addData', (request, response) => {
     console.log(request.body);
 
     const d = request.body;
@@ -68,5 +68,5 @@ app.post('localhost:5501/addData', (request, response) => {
     projectData['resp'] = d.resp;
 
     console.log('projectData: ', projectData);
-
+    response.send(projectData)
 });

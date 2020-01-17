@@ -39,14 +39,13 @@ function performAction(e) {
             console.log(result);
             let newFeeling = document.getElementById('feelings').value;
             // calling post function
-            postData("http://localhost:5501/addData", {
+            let postResponse = postData("http://localhost:5501/addData", {
                 temp: result.main.temp,
                 date: newDate,
                 resp: newFeeling
-            });
-        })
-        .then(data => {
-            updateUI();
+            }).then(postResponse => {
+                updateUI(postResponse);
+            })
         })
 }
 
@@ -95,18 +94,14 @@ const postData = async(url = "", data = {}) => {
 
 
 /* Function that retrieves data from server to update UI elements */
-const updateUI = async() => {
-    const request = await fetch("http://localhost:5501/all");
-    try {
-        const allData = await request.json();
-        console.log(allData);
-        document.getElementById("temp").innerHTML =
-            "Temperature: " + allData.temp + " °C";
-        document.getElementById("date").innerHTML = "Date: " + allData.date;
-        document.getElementById("content").innerHTML = "Content: " + allData.resp;
-    } catch (error) {
-        console.log("error", error);
-    }
+const updateUI = async(allData) => {
+
+    console.log(allData);
+    document.getElementById("temp").innerHTML =
+        "Temperature: " + allData.temp + " °C";
+    document.getElementById("date").innerHTML = "Date: " + allData.date;
+    document.getElementById("content").innerHTML = "Content: " + allData.resp;
+
 };
 
 
