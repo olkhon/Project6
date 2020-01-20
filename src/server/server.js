@@ -49,24 +49,17 @@ function listen() {
     console.log(`running on localhost: ${port}`);
 }
 
-// get Route to return project data object
+// post route to User Input Client
 
-app.get('localhost:5501/all', (request, response) => {
-    response.send(projectData);
-});
+var coordinates = require('./geonamesApi.js')
 
 
-// post route to add data received from API
+// POST an animal
+const data = [];
 
-app.post('/addData', (request, response) => {
-    console.log(request.body);
+app.post('/city', addCity);
 
-    const d = request.body;
-
-    projectData['temp'] = d.temp;
-    projectData['date'] = d.date;
-    projectData['resp'] = d.resp;
-
-    console.log('projectData: ', projectData);
-    response.send(projectData)
-});
+function addCity(req, res) {
+    data.push(req.body);
+    console.log(req.body);
+};
