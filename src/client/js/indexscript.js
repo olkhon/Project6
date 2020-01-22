@@ -12,7 +12,8 @@ function performAction(e) {
 
     // getting the input from field city and the user
     const newCity = document.getElementById('city').value;
-
+    const newDate = document.getElementById('inputDate').value;
+    console.log(newDate);
 
     /* Function to POST data from clientside to server-side out of the box method */
     const postData = async(url = '/city', data = {}) => {
