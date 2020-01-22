@@ -1,22 +1,24 @@
-async function getCoordinates(userCity) {
+async function getCoordinates(data) {
+
     const dotenv = require('dotenv');
-    dotemv.config();
+    dotenv.config();
     const fetch = require('node-fetch');
-    const baseURL = 'http://apigeonames.org/searchJSON?q=';
-    const userName = process.env.user_name;
-    const res = await fetch(`${baseURL}${userCity}&username=${userName}`)
+
+    const url = `http://api.geonames.org/searchJSON?q=${data}&maxRows=10&username=olkhon`;
 
     try {
-
-        const data = await res.json();
-        const lng = data.geonames[0];
-        const lat = data.geonames[1];
-        console.log(lat, lng)
-        return (lat, lng);
-
+        const res = await fetch(url);
+        const output = await res.json();
+        return {
+            lng: output.geonames[0].lng,
+            lat: output.geonames[0].lat,
+            name: output.geonames[0].countryName
+        };
+        console.log(lng, lat, name);
     } catch (error) {
-        console.log('error');
+        console.log(error)
+        return error;
     }
-}
+};
 
 module.exports = getCoordinates;

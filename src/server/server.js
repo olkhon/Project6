@@ -51,15 +51,20 @@ function listen() {
 
 // post route to User Input Client
 
-var coordinates = require('./geonamesApi.js')
+var getCoordinates = require('./geonamesApi')
 
+// POST City function server side
 
-// POST an animal
-const data = [];
+app.post('/addCity', function(req, res) {
+    //data.push(req.body);
+    console.log(req.body.city);
+    getCoordinates(req.body.city)
+        .then(data => {
+            console.log(data);
+            // projectData = data;
 
-app.post('/city', addCity);
+            // send back to client    
+            res.send(data);
+        })
 
-function addCity(req, res) {
-    data.push(req.body);
-    console.log(req.body);
-};
+});

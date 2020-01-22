@@ -8,9 +8,13 @@ document.getElementById('generate').addEventListener('click', performAction);
 // Function posts data from 
 
 function performAction(e) {
+
+
+    // getting the input from field city and the user
     const newCity = document.getElementById('city').value;
 
-    /* Function to POST data */
+
+    /* Function to POST data from clientside to server-side out of the box method */
     const postData = async(url = '/city', data = {}) => {
         console.log(data)
         const response = await fetch(url, {
@@ -32,14 +36,10 @@ function performAction(e) {
         }
     }
 
-    // TODO-Call Function
-    postData('/addCity', { city: newCity });
-
+    // calling postData function with parameters url and value of city
+    //working version
+    postData('/addCity', { city: newCity }).then(result => console.log(result));
 }
-
-
-
-
 
 
 
