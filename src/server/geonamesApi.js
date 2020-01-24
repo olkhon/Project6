@@ -1,8 +1,12 @@
 async function getCoordinates(data) {
 
     const dotenv = require('dotenv');
-    dotenv.config();
+    dotenv.config()
+
+    const userName = process.env.user_name;
+
     const fetch = require('node-fetch');
+
 
     const url = `http://api.geonames.org/searchJSON?q=${data}&maxRows=10&username=olkhon`;
 

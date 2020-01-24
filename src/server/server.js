@@ -56,9 +56,10 @@ var getCoordinates = require('./geonamesApi')
 // POST City function server side
 
 app.post('/addCity', function(req, res) {
-    //data.push(req.body);
-    console.log(req.body.city);
-    getCoordinates(req.body.city)
+    inputCity = req.body.city;
+    inputDate = req.body.date;
+
+    getCoordinates(inputCity)
         .then(data => {
             console.log(data);
             // projectData = data;
