@@ -52,6 +52,7 @@ function listen() {
 // post route to User Input Client
 
 var getCoordinates = require('./geonamesApi')
+var getWeather = require('./darkskyApi')
 
 // POST City function server side
 
@@ -60,12 +61,31 @@ app.post('/addCity', function(req, res) {
     inputDate = req.body.date;
 
     getCoordinates(inputCity)
+
+
+
+    .then(data => getWeather(data['lng'], data['lat'], inputDate))
         .then(data => {
+
             console.log(data);
+
+            /*
+             fruits = ['apple', 'melon', 'banana', 'cherry'];
+             testFruits = Array.isArray(fruits);
+             console.log(testFruits);
+
+             test = Array.isArray(data)
+             console.log(test);
+             */
+
+
             // projectData = data;
 
             // send back to client    
-            res.send(data);
+            res.send({
+                city: inputCity,
+                date: inputDate
+            });
         })
 
 });
