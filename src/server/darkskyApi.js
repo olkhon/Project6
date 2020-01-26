@@ -6,18 +6,26 @@ async function getWeather(lng, lat, newDateArrival) {
     dotenv.config();
     const darkskyApiPin = process.env.darksky_key;
 
-    lngData = lng;
-    latData = lat;
-    console.log(lng, lat);
+    //lngData = lng;
+    //latData = lat;
+    //console.log(lng, lat);
 
     try {
 
 
-        const res = await fetch(`https://api.darksky.net/forecast/${darkskyApiPin}/${lngData},${latData}`);
+        const res = await fetch(`https://api.darksky.net/forecast/${darkskyApiPin}/${lng},${lat}`);
         const data = await res.json();
         console.log(data);
-        const temperature = data.currently.temperature;
-        console.log(temperature);
+        const degrees = data.currently.temperature;
+        console.log(degrees);
+
+        // calculate Celcius from Fahrenheit value
+        const x = degrees - 32;
+        const y = 1.8;
+        const temperaturePlain = x / y;
+        const temperature = temperaturePlain.toFixed(2)
+
+        //return temperature in Celsius
         return (temperature);
 
     } catch (error) {
