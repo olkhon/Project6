@@ -53,39 +53,33 @@ function listen() {
 
 var getCoordinates = require('./geonamesApi')
 var getWeather = require('./darkskyApi')
+var retrieveImage = require('./pixabayApi')
 
 // POST City function server side
 
 app.post('/addCity', function(req, res) {
     inputCity = req.body.city;
-    inputDate = req.body.date;
+    inputDateArrival = req.body.arrival;
+    inputDateDeparture = req.body.departure;
+
 
     getCoordinates(inputCity)
 
+    .then(data => getWeather(data['lng'], data['lat'], inputDateArrival))
+        .then(data => {
 
-
-    .then(data => getWeather(data['lng'], data['lat'], inputDate))
+            console.log(data);
+        })
+        .then(data => retrieveImage(inputCity))
         .then(data => {
 
             console.log(data);
 
-            /*
-             fruits = ['apple', 'melon', 'banana', 'cherry'];
-             testFruits = Array.isArray(fruits);
-             console.log(testFruits);
-
-             test = Array.isArray(data)
-             console.log(test);
-             */
-
-
-            // projectData = data;
-
-            // send back to client    
-            res.send({
-                city: inputCity,
-                date: inputDate
-            });
         })
+    res.send({
+        city: inputCity,
+        arrival: inputDateArrival,
+        departure: inputDateDeparture
+    });
 
 });

@@ -8,7 +8,7 @@ async function getCoordinates(data) {
     const fetch = require('node-fetch');
 
 
-    const url = `http://api.geonames.org/searchJSON?q=${data}&maxRows=10&username=olkhon`;
+    const url = `http://api.geonames.org/searchJSON?q=${data}&maxRows=10&username=${userName}`;
 
     try {
         const res = await fetch(url);
