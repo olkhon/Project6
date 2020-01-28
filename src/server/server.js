@@ -62,24 +62,39 @@ app.post('/addCity', function(req, res) {
     inputDateArrival = req.body.arrival;
     inputDateDeparture = req.body.departure;
 
+    let temperature;
+    let imageUrl;
 
     getCoordinates(inputCity)
 
     .then(data => getWeather(data['lng'], data['lat'], inputDateArrival))
         .then(data => {
-
-            console.log(data);
+            temperature = data
+            console.log(temperature);
         })
         .then(data => retrieveImage(inputCity))
         .then(data => {
-
-            console.log(data);
+            imageUrl = data
+            console.log(imageUrl);
 
         })
     res.send({
         city: inputCity,
         arrival: inputDateArrival,
-        departure: inputDateDeparture
+        departure: inputDateDeparture,
+        temperature: temperature,
+        imageUrl: imageUrl
     });
 
+});
+
+app.get('/retrievedData', function(req, res) {
+    console.log('All data is send back to client');
+    res.send({
+        city: inputCity,
+        arrival: inputDateArrival,
+        departure: inputDateDeparture,
+        temperature: temperature,
+        imageUrl: imageUrl
+    })
 });
