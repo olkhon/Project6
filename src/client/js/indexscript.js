@@ -12,10 +12,8 @@ function performAction(e) {
 
     // getting the input from field city and the user
     const newCity = document.getElementById('city').value;
-    const newDateArrival = new Date(document.getElementById('arrival').value).getTime() / 1000;
-    console.log(newDateArrival);
-    const newDateDeparture = new Date(document.getElementById('departure').value).getTime() / 1000;
-
+    const newDateArrival = document.getElementById('arrival').value;
+    const newDateDeparture = document.getElementById('departure').value;
 
     /* Function to POST data from clientside to server-side out of the box method */
     const postData = async(url = '/city', data = {}) => {
@@ -39,15 +37,9 @@ function performAction(e) {
         }
     }
 
-    const resultsForm = {
-        city: newCity,
-        arrival: newDateArrival,
-        departure: newDateDeparture,
-    }
-
     // calling postData function with parameters url and value of city
     //working version
-    postData('http://localhost:5501/addCity', resultsForm).then(data => updateGui())
+    postData('/addCity', { city: newCity, arrival: newDateArrival, departure: newDateDeparture }).then(result => console.log(result));
 }
 
 

@@ -1,4 +1,4 @@
-async function getWeather(lng, lat, inputDateArrival) {
+async function getWeather(lng, lat, newDateArrival) {
 
     const fetch = require('node-fetch')
     const baseurlDarksky = 'https://api.darksky.net/forecast/';
@@ -13,7 +13,7 @@ async function getWeather(lng, lat, inputDateArrival) {
     try {
 
 
-        const res = await fetch(`https://api.darksky.net/forecast/${darkskyApiPin}/${lng},${lat},${inputDateArrival}`);
+        const res = await fetch(`https://api.darksky.net/forecast/${darkskyApiPin}/${lng},${lat}`);
         const data = await res.json();
         console.log(data);
         const degrees = data.currently.temperature;
