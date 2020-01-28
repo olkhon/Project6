@@ -6,9 +6,6 @@ async function getWeather(lng, lat, inputDateArrival) {
     dotenv.config();
     const darkskyApiPin = process.env.darksky_key;
 
-    //lngData = lng;
-    //latData = lat;
-    //console.log(lng, lat);
 
     try {
 
