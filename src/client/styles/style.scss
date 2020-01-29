@@ -19,12 +19,10 @@
 /*  Basic Styling To Override Default For Basic HTML Elements */
 
 label {
-    display: block;
     font-size: 27px;
 }
 
 input {
-    display: block;
     height: 60px;
     width: 320px;
     background: #22b2da;
@@ -35,7 +33,7 @@ input {
 }
 
 button {
-    width: 400px;
+    width: 100%;
     height: 100px;
     background: #3b4a6b;
     color: #f0d43a;
@@ -85,4 +83,29 @@ button:focus {
     /* Microsoft Edge */
     color: #f0d43a;
     font-family: 'Oswald', sans-serif;
+}
+
+#imgTagPixabay {
+    height: 100px;
+    width: 100px;
+}
+
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+    padding: 20px;
+    text-align: center;
+}
+
+.divh1,
+.divButton {
+    text-align: center;
+}
+
+.margin-small-bottom {
+    margin-bottom: 5px;
 }

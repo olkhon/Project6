@@ -57,7 +57,7 @@ var retrieveImage = require('./pixabayApi')
 
 // POST City function server side
 
-let testObject = {};
+let dataObject = {};
 
 app.post('/addCity', function(req, res) {
     inputCity = req.body.city;
@@ -71,23 +71,21 @@ app.post('/addCity', function(req, res) {
 
     .then(data => getWeather(data['lng'], data['lat'], inputDateArrival))
         .then(data => {
-            temperature = data
-            console.log(temperature);
+            temperature = data;
         })
         .then(data => retrieveImage(inputCity))
         .then(data => {
-            imageUrl = data
-            console.log(imageUrl);
-            testObject.city = inputCity;
-            testObject.arrival = inputDateArrival;
-            testObject.departure = inputDateDeparture;
-            testObject.temperature = temperature;
-            testObject.imageUrl = imageUrl;
+            imageUrl = data;
+            dataObject.city = inputCity;
+            dataObject.arrival = inputDateArrival;
+            dataObject.departure = inputDateDeparture;
+            dataObject.temperature = temperature;
+            dataObject.imageUrl = imageUrl;
 
-            console.log("testobject is", testObject);
+            console.log("Dataobject has following value:", dataObject);
 
             res.send(
-                testObject
+                dataObject
             );
 
         })
@@ -102,6 +100,6 @@ app.post('/addCity', function(req, res) {
 app.get('/retrievedData', function(req, res) {
     console.log('Test retrieved data');
     res.send(
-        testObject
+        dataObject
     )
 });

@@ -13,7 +13,8 @@ async function updateGui(data) {
         }
         */
     console.log(data);
-    document.getElementById('image').innerHTML = `${data.imageUrl}`;
+    document.getElementById('imageContainer').innerHTML = `<img src="${data.imageUrl}" id="imgTagPixabay">`;
+
 }
 
 
