@@ -57,6 +57,8 @@ var retrieveImage = require('./pixabayApi')
 
 // POST City function server side
 
+let testObject = {};
+
 app.post('/addCity', function(req, res) {
     inputCity = req.body.city;
     inputDateArrival = req.body.arrival;
@@ -76,25 +78,30 @@ app.post('/addCity', function(req, res) {
         .then(data => {
             imageUrl = data
             console.log(imageUrl);
+            testObject.city = inputCity;
+            testObject.arrival = inputDateArrival;
+            testObject.departure = inputDateDeparture;
+            testObject.temperature = temperature;
+            testObject.imageUrl = imageUrl;
+
+            console.log("testobject is", testObject);
+
+            res.send(
+                testObject
+            );
 
         })
-    res.send({
-        city: inputCity,
-        arrival: inputDateArrival,
-        departure: inputDateDeparture,
-        temperature: temperature,
-        imageUrl: imageUrl
-    });
+
+
+
 
 });
 
+
+
 app.get('/retrievedData', function(req, res) {
-    console.log('All data is send back to client');
-    res.send({
-        city: inputCity,
-        arrival: inputDateArrival,
-        departure: inputDateDeparture,
-        temperature: temperature,
-        imageUrl: imageUrl
-    })
+    console.log('Test retrieved data');
+    res.send(
+        testObject
+    )
 });
