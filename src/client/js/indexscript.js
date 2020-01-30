@@ -1,8 +1,10 @@
-/* Global Variables */
+/* Imports */
 import { updateGui } from './updateGui.js'
+import { printData } from './printTravelData'
 // add Listener for button with id generate
 
 document.getElementById('generate').addEventListener('click', performAction);
+document.getElementById('printButton').addEventListener('click', printData);
 
 
 // Function posts data from 
