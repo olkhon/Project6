@@ -63,6 +63,8 @@ app.post('/addCity', function(req, res) {
     inputCity = req.body.city;
     inputDateArrival = req.body.arrival;
     inputDateDeparture = req.body.departure;
+    inputCountdown = req.body.countdown;
+    inputDuration = req.body.duration;
 
     let temperature;
     let imageUrl;
@@ -79,6 +81,8 @@ app.post('/addCity', function(req, res) {
             dataObject.city = inputCity;
             dataObject.arrival = inputDateArrival;
             dataObject.departure = inputDateDeparture;
+            dataObject.countdown = inputCountdown;
+            dataObject.duration = inputDuration;
             dataObject.temperature = temperature;
             dataObject.imageUrl = imageUrl;
 
@@ -95,11 +99,10 @@ app.post('/addCity', function(req, res) {
 
 });
 
-
-
+/*
 app.get('/retrievedData', function(req, res) {
     console.log('Test retrieved data');
     res.send(
         dataObject
     )
-});
+});*/

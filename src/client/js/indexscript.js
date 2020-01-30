@@ -16,8 +16,14 @@ function performAction(e) {
     const newCity = document.getElementById('city').value;
     const newDateArrival = new Date(document.getElementById('arrival').value).getTime() / 1000;
     const newDateDeparture = new Date(document.getElementById('departure').value).getTime() / 1000;
-    const currentTime = new Date().getTime() / 1000;
-    console.log(currentTime);
+    const newCurrentTime = new Date().getTime() / 1000;
+
+    // 60*60*24 = 86400 in order to get days
+    const newCountdown = ((newDateArrival - newCurrentTime) / 86400).toFixed(0);
+    const newDuration = ((newDateDeparture - newDateArrival) / 86400).toFixed(0);
+    console.log(newDuration);
+    console.log(newCountdown);
+    console.log(newCurrentTime);
 
 
     /* Function to POST data from clientside to server-side out of the box method */
@@ -46,6 +52,8 @@ function performAction(e) {
         city: newCity,
         arrival: newDateArrival,
         departure: newDateDeparture,
+        countdown: newCountdown,
+        duration: newDuration
     }
 
     console.log(resultsForm)
