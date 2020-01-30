@@ -30,6 +30,7 @@ input {
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
+    text-align: center;
 }
 
 button {
@@ -86,8 +87,8 @@ button:focus {
 }
 
 #imgTagPixabay {
-    height: 100px;
-    width: 100px;
+    height: 300px;
+    width: 300px;
 }
 
 .grid-container {
@@ -108,4 +109,15 @@ button:focus {
 
 .margin-small-bottom {
     margin-bottom: 5px;
+}
+
+.grid-container-2 {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+
+.grid-item-2 {
+    padding: 20px;
+    text-align: center;
 }
