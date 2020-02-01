@@ -1,6 +1,9 @@
 /* Imports */
 import { updateGui } from './updateGui.js'
 import { printData } from './printTravelData'
+import { deleteJourney } from './deleteJourney'
+
+
 // add Listener for button with id generate
 
 document.getElementById('generate').addEventListener('click', performAction);
@@ -16,14 +19,15 @@ function performAction(e) {
     const newCity = document.getElementById('city').value;
     const newDateArrival = new Date(document.getElementById('arrival').value).getTime() / 1000;
     const newDateDeparture = new Date(document.getElementById('departure').value).getTime() / 1000;
-    const newCurrentTime = new Date().getTime() / 1000;
-
+    const newCurrentTime = (new Date().getTime() / 1000).toFixed(0);
     // 60*60*24 = 86400 in order to get days
     const newCountdown = ((newDateArrival - newCurrentTime) / 86400).toFixed(0);
     const newDuration = ((newDateDeparture - newDateArrival) / 86400).toFixed(0);
-    console.log(newDuration);
-    console.log(newCountdown);
+
+
     console.log(newCurrentTime);
+
+
 
 
     /* Function to POST data from clientside to server-side out of the box method */
@@ -53,7 +57,8 @@ function performAction(e) {
         arrival: newDateArrival,
         departure: newDateDeparture,
         countdown: newCountdown,
-        duration: newDuration
+        duration: newDuration,
+        current: newCurrentTime,
     }
 
     console.log(resultsForm)

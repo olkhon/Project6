@@ -65,15 +65,24 @@ app.post('/addCity', function(req, res) {
     inputDateDeparture = req.body.departure;
     inputCountdown = req.body.countdown;
     inputDuration = req.body.duration;
+    inputCurrentTime = req.body.current;
+    inputTest = req.body.test;
+    console.log(inputCurrentTime)
+
 
     let temperature;
     let imageUrl;
+    let msgTime;
 
     getCoordinates(inputCity)
 
-    .then(data => getWeather(data['lng'], data['lat'], inputDateArrival))
+    .then(data => getWeather(data['lng'], data['lat'], inputDateArrival, inputCurrentTime))
         .then(data => {
-            temperature = data;
+            temperature = data[1];
+            msgTime = data[0];
+
+            console.log(temperature);
+            console.log(msgTime);
         })
         .then(data => retrieveImage(inputCity))
         .then(data => {
@@ -85,6 +94,10 @@ app.post('/addCity', function(req, res) {
             dataObject.duration = inputDuration;
             dataObject.temperature = temperature;
             dataObject.imageUrl = imageUrl;
+            dataObject.current = inputCurrentTime;
+            dataObject.summary = msgTime;
+
+
 
             console.log("Dataobject has following value:", dataObject);
 
