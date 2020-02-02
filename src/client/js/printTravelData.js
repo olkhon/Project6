@@ -4,17 +4,20 @@ function logic originally found on https://gist.github.com/andrewlimaza/490a6941
 */
 
 
-function printData() {
+function printTravelData() {
 
-    let toBePrinted = document.getElementById('dataContainer').innerHTML;
-    let allContent = document.body.innerHTML;
+    document.getElementById('printButton').addEventListener('click', function() {
+        let toBePrinted = document.getElementById('dataContainer').innerHTML;
+        let allContent = document.body.innerHTML;
 
-    document.body.innerHTML = toBePrinted;
+        document.body.innerHTML = toBePrinted;
 
-    window.print();
+        window.print();
 
-    document.body.innerHTML = allContent;
+        document.body.innerHTML = allContent;
+    });
+
 }
 
 
-export { printData }
+export { printTravelData }

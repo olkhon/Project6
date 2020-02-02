@@ -1,15 +1,11 @@
 /* Imports */
 import { updateGui } from './updateGui.js'
 import { printData } from './printTravelData'
-import { deleteJourney } from './deleteJourney'
 
 
 // add Listener for button with id generate
 
 document.getElementById('generate').addEventListener('click', performAction);
-document.getElementById('printButton').addEventListener('click', printData);
-
-
 
 // Function posts data from 
 
@@ -72,7 +68,7 @@ function performAction(e) {
             updateGui(data)
         })
 
-    document.getElementById('printButton').addEventListener('click', printData);
+
 
 
 
