@@ -10,6 +10,7 @@ document.getElementById('generate').addEventListener('click', performAction);
 document.getElementById('printButton').addEventListener('click', printData);
 
 
+
 // Function posts data from 
 
 function performAction(e) {
@@ -70,6 +71,8 @@ function performAction(e) {
             console.log('returned data', data);
             updateGui(data)
         })
+
+    document.getElementById('printButton').addEventListener('click', printData);
 
 
 
