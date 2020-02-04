@@ -14,6 +14,8 @@ async function updateGui(data) {
     console.log(data);
 
     if (data.countdown == 0) {
+        document.getElementById('holderAnswerApi').style.borderradius = "5px";
+        document.getElementById('holderAnswerApi').style.border = "1px solid grey";
         const deleteButton = document.createElement("BUTTON");
         deleteButton.setAttribute("id", "deleteButton");
         deleteButton.innerHTML = "Delete current travel data";
@@ -30,7 +32,8 @@ async function updateGui(data) {
         <p>Your trip to ${data.city} starts tomorrow.</p>
         <p>Your trip will last in total ${data.duration} ${days}.</p>`;
     } else {
-
+        document.getElementById('holderAnswerApi').style.borderradius = "5px";
+        document.getElementById('holderAnswerApi').style.border = "1px solid grey";
         const deleteButton = document.createElement("BUTTON");
         deleteButton.setAttribute("id", "deleteButton");
         deleteButton.innerHTML = "Delete current travel data";

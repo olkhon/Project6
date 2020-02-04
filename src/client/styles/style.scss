@@ -1,10 +1,9 @@
 #app {
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
     height: 100vh;
-    background: #f23557;
-    color: #f0d43a;
+    background: smokewhite;
+    color: black;
     justify-content: center;
     grid-gap: 1em;
     font-size: 20px;
@@ -26,18 +25,18 @@ input {
     height: 60px;
     width: 320px;
     background: #22b2da;
-    color: #f0d43a;
+    color: black;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
     text-align: center;
 }
 
-button {
-    width: 100%;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
+#generate {
+    width: 50%;
+    height: 50px;
+    background: #FF6860;
+    color: white;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
     border: none;
@@ -70,25 +69,25 @@ button:focus {
 
 ::placeholder {
     /* Firefox, Chrome, Opera */
-    color: #f0d43a;
+    color: black;
     font-family: 'Oswald', sans-serif;
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: #f0d43a;
+    color: black;
     font-family: 'Oswald', sans-serif;
 }
 
 ::-ms-input-placeholder {
     /* Microsoft Edge */
-    color: #f0d43a;
+    color: black;
     font-family: 'Oswald', sans-serif;
 }
 
 #imgTagPixabay {
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 25%;
 }
 
 .grid-container {
@@ -102,9 +101,9 @@ button:focus {
     text-align: center;
 }
 
-.divh1,
 .divButton {
     text-align: center;
+    margin-bottom: 2%;
 }
 
 .margin-small-bottom {
@@ -120,4 +119,51 @@ button:focus {
 .grid-item-2 {
     padding: 20px;
     text-align: center;
+}
+
+.holderInputFields {
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin-bottom: 2%;
+}
+
+#ui-datepicker-div {
+    background-color: whitesmoke;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-container>div {
+    width: 50%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.flex-container-2 {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 2%;
+}
+
+.flex-container-2>div {
+    margin: 5px;
+    width: 33.3%;
+    text-align: center;
+}
+
+.container {
+    margin: 10% 15% 15% 5%
+}
+
+.divH1 {
+    text-align: center;
+}
+
+.picDiv,
+.textDiv {
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
