@@ -35,7 +35,7 @@ input {
 #generate {
     width: 50%;
     height: 50px;
-    background: #FF6860;
+    background: green;
     color: white;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
@@ -165,5 +165,33 @@ button:focus {
 .picDiv,
 .textDiv {
     margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#deleteButton {
+    background-color: #FF6860;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
+#printButton {
+    background-color: burlywood;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
     margin-bottom: 2%;
 }

@@ -5,7 +5,8 @@ function deleteJourney() {
         document.getElementById('textDiv').innerHTML = "";
         document.getElementById("deleteButton").remove();
         document.getElementById("printButton").remove();
-        document.getElementById('holderAnswerApi').remove();
+        document.getElementById('holderAnswerApi').style.border = "";
+
     });
 }
 
