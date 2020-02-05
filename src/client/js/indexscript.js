@@ -22,10 +22,6 @@ function performAction(e) {
     const newDuration = ((newDateDeparture - newDateArrival) / 86400).toFixed(0);
 
 
-    console.log(newCurrentTime);
-
-
-
 
     /* Function to POST data from clientside to server-side out of the box method */
     const postData = async(url = '/city', data = {}) => {
@@ -58,8 +54,6 @@ function performAction(e) {
         current: newCurrentTime,
     }
 
-    console.log(resultsForm)
-
     // calling postData function with parameters url and value of city
     //working version
     postData('http://localhost:5501/addCity', resultsForm)
@@ -67,10 +61,6 @@ function performAction(e) {
             console.log('returned data', data);
             updateGui(data)
         })
-
-
-
-
 
 }
 

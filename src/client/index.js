@@ -1,13 +1,28 @@
+// jquery package require
 require('webpack-jquery-ui');
 
-
+//initialize datepicker jquery
 $(function() {
     $("#arrival").datepicker({
         minDate: 0,
+        onSelect: function(date) {
+            const arrival = $('#arrival').datepicker('getDate');
+            const arrivalDateNumber = arrival.getDate();
+            const departureDate = arrivalDateNumber + 1;
+            $('#departure').datepicker('minDate', departureDate);
+        }
     });
-    $("#departure").datepicker({
-        // set departure date default to one date after arrival date     
-        minDate: $('#arrival').datepicker('getDate') + 1,
+    $('#departure').datepicker({
+
+        minDate: $('#arrival').datepicker('getDate'),
+        onClose: function() {
+            const arrival = $('#arrival').datepicker('getDate');
+            const departure = $('#departure').datepicker('getDate');
+            if (departure <= arrival) {
+                const minDate = $('#departure').datepicker('option', 'minDate');
+                $('#departure').datepicker('setDate', minDate);
+            }
+        }
     });
 
 });

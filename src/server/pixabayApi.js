@@ -13,11 +13,8 @@ async function retrievePic(inputCity) {
 
 
     try {
-
         const data = await res.json();
-
         const image = data.hits[0].largeImageURL;
-        console.log(image);
         return image;
 
     } catch (error) {

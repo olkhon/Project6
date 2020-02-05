@@ -6,7 +6,6 @@ function deleteJourney() {
         document.getElementById("deleteButton").remove();
         document.getElementById("printButton").remove();
         document.getElementById('holderAnswerApi').style.border = "";
-
     });
 }
 

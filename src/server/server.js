@@ -80,9 +80,6 @@ app.post('/addCity', function(req, res) {
         .then(data => {
             temperature = data[1];
             msgTime = data[0];
-
-            console.log(temperature);
-            console.log(msgTime);
         })
         .then(data => retrieveImage(inputCity))
         .then(data => {
@@ -97,10 +94,6 @@ app.post('/addCity', function(req, res) {
             dataObject.current = inputCurrentTime;
             dataObject.summary = msgTime;
 
-
-
-            console.log("Dataobject has following value:", dataObject);
-
             res.send(
                 dataObject
             );
@@ -111,11 +104,3 @@ app.post('/addCity', function(req, res) {
 
 
 });
-
-/*
-app.get('/retrievedData', function(req, res) {
-    console.log('Test retrieved data');
-    res.send(
-        dataObject
-    )
-});*/

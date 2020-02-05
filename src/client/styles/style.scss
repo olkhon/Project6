@@ -106,7 +106,7 @@ button:focus {
     margin-bottom: 2%;
 }
 
-.margin-small-bottom {
+.marginSmallBottom {
     margin-bottom: 5px;
 }
 
@@ -131,24 +131,24 @@ button:focus {
     background-color: whitesmoke;
 }
 
-.flex-container {
+.flexContainer {
     display: flex;
     flex-wrap: nowrap;
 }
 
-.flex-container>div {
+.flexContainer>div {
     width: 50%;
     text-align: center;
     margin-top: 2%;
 }
 
-.flex-container-2 {
+.flexContainer2 {
     display: flex;
     flex-wrap: nowrap;
     margin-bottom: 2%;
 }
 
-.flex-container-2>div {
+.flexContainer2>div {
     margin: 5px;
     width: 33.3%;
     text-align: center;

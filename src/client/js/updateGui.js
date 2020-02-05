@@ -11,8 +11,6 @@ async function updateGui(data) {
         days = 'day';
     }
 
-    console.log(data);
-
     if (data.countdown == 0) {
         document.getElementById('holderAnswerApi').style.borderradius = "5px";
         document.getElementById('holderAnswerApi').style.border = "1px solid grey";
@@ -50,7 +48,6 @@ async function updateGui(data) {
         <p>Your trip to ${data.city} starts in ${data.countdown} days.</p>
         <p>Your trip will last in total ${data.duration} ${days}.</p>`;
     }
-
 
     deleteJourney();
     printTravelData();
