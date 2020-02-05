@@ -1,7 +1,7 @@
 // jquery package require
 require('webpack-jquery-ui');
 
-//initialize datepicker jquery
+//initialize datepicker jquery -> originally validation idea found on https://stackoverflow.com/a/21336604
 $(function() {
     $("#arrival").datepicker({
         minDate: 0,
