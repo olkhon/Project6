@@ -8,17 +8,17 @@ async function getCoordinates(data) {
     const fetch = require('node-fetch');
 
 
-    const url = `http://api.geonames.org/searchJSON?q=${data}&maxRows=10&username=${userName}`;
+    const res = await fetch(`http://api.geonames.org/searchJSON?q=${data}&maxRows=10&username=${userName}`);
 
     try {
-        const res = await fetch(url);
-        const output = await res.json();
-        return {
-            lng: output.geonames[0].lng,
-            lat: output.geonames[0].lat,
-            name: output.geonames[0].countryName
-        };
-        console.log(lng, lat, name);
+        const data = await res.json();
+
+        const lng = data.geonames[0].lng;
+        const lat = data.geonames[0].lat;
+
+        console.log(lng, lat);
+
+        return [lat, lng];
     } catch (error) {
         console.log(error)
         return error;

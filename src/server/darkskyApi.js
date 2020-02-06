@@ -17,16 +17,9 @@ async function getWeather(lng, lat, inputDateArrival, inputCurrentTime) {
             const msgTime = "Please be aware that your trip is to far in the future for accurate weather information.";
             const degrees = data.currently.temperature;
 
-            // calculate Celcius from Fahrenheit value
-            const x = degrees - 32;
-            const y = 1.8;
-            const temperaturePlain = x / y;
-            const temperature = temperaturePlain.toFixed(2)
 
-
-
-            //return temperature in Celsius
-            return [msgTime, temperature];
+            //return temperature 
+            return [msgTime, degrees];
 
         } catch (error) {
             console.log("error", error);
@@ -35,16 +28,10 @@ async function getWeather(lng, lat, inputDateArrival, inputCurrentTime) {
         try {
             const res = await fetch(`https://api.darksky.net/forecast/${darkskyApiPin}/${lng},${lat},${inputDateArrival}`);
             const data = await res.json();
-
+            console.log(data)
             const msgTime = data.currently.summary;
-            const degrees = data.currently.temperature;
-            // calculate Celcius from Fahrenheit value
-            const x = degrees - 32;
-            const y = 1.8;
-            const temperaturePlain = x / y;
-            const temperature = temperaturePlain.toFixed(2)
+            const temperature = data.currently.temperature;
 
-            //return temperature in Celsius
             return [msgTime, temperature];
 
         } catch (error) {

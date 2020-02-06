@@ -73,11 +73,13 @@ app.post('/addCity', function(req, res) {
     let temperature;
     let imageUrl;
     let msgTime;
-
+    console.log(inputCity)
     getCoordinates(inputCity)
 
-    .then(data => getWeather(data['lng'], data['lat'], inputDateArrival, inputCurrentTime))
-        .then(data => {
+
+    .then(data => getWeather(data[0], data[1], inputDateArrival, inputCurrentTime))
+
+    .then(data => {
             temperature = data[1];
             msgTime = data[0];
         })
