@@ -6,4 +6,3 @@ import {
 test("Is function undefined", async() => {
     expect(getCoordinates).toBeUndefined();
 });
-ön
