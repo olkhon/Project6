@@ -66,9 +66,9 @@ app.post('/addCity', function(req, res) {
     inputCountdown = req.body.countdown;
     inputDuration = req.body.duration;
     inputCurrentTime = req.body.current;
-    inputTest = req.body.test;
-    console.log(inputCurrentTime)
-
+    inputDay = req.body.day;
+    console.log(inputDay);
+    console.log(inputDateArrival);
 
     let temperature;
     let imageUrl;

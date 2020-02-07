@@ -15,11 +15,12 @@ function performAction(e) {
     // getting the input from field city and the user
     const newCity = document.getElementById('city').value;
     const newDateArrival = new Date(document.getElementById('arrival').value).getTime() / 1000;
-    const newDateArrivalCountdown = new Date(document.getElementById('arrival').value).getDate();
+    const newDateCountdown = new Date(document.getElementById('arrival').value).getDate();
     const newDateDeparture = new Date(document.getElementById('departure').value).getTime() / 1000;
-    const newCurrentTime = new Date().getDate();
+    const newCurrentTime = (new Date().getTime() / 1000).toFixed(0);
+    const newDay = new Date().getDate();
     // 60*60*24 = 86400 in order to get days
-    const newCountdown = newDateArrivalCountdown - newCurrentTime;
+    const newCountdown = newDateCountdown - newDay;
     const newDuration = ((newDateDeparture - newDateArrival) / 86400).toFixed(0);
 
 
