@@ -21,17 +21,6 @@ label {
     font-size: 27px;
 }
 
-input {
-    height: 60px;
-    width: 320px;
-    background: #22b2da;
-    color: black;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    text-align: center;
-}
-
 #generate {
     width: 50%;
     height: 50px;
@@ -85,11 +74,6 @@ button:focus {
     font-family: 'Oswald', sans-serif;
 }
 
-#imgTagPixabay {
-    height: 100%;
-    width: 25%;
-}
-
 .grid-container {
     display: inline-grid;
     grid-template-columns: auto auto auto;
@@ -110,93 +94,182 @@ button:focus {
     margin-bottom: 5px;
 }
 
-.grid-container-2 {
-    display: inline-grid;
-    grid-template-columns: auto auto;
-    padding: 10px;
+@media(min-device-width: 1270px) {
+    #imgTagPixabay {
+        height: 100%;
+        width: 25%;
+    }
+    input {
+        height: 60px;
+        width: 320px;
+        background: #22b2da;
+        color: black;
+        font-size: 20px;
+        font-family: 'Oswald', sans-serif;
+        border: none;
+        text-align: center;
+    }
+    .grid-container-2 {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        padding: 10px;
+    }
+    .grid-item-2 {
+        padding: 20px;
+        text-align: center;
+    }
+    .holderInputFields {
+        border-radius: 5px;
+        border: 1px solid grey;
+        margin-bottom: 2%;
+    }
+    #ui-datepicker-div {
+        background-color: whitesmoke;
+    }
+    .flexContainer {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .flexContainer>div {
+        width: 50%;
+        text-align: center;
+        margin-top: 2%;
+    }
+    .flexContainer2 {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 2%;
+    }
+    .flexContainer2>div {
+        margin: 5px;
+        width: 100%;
+        text-align: center;
+    }
+    .container {
+        margin: 10% 15% 15% 5%
+    }
+    .divH1 {
+        text-align: center;
+    }
+    .picDiv,
+    .textDiv {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    #deleteButton {
+        background-color: #FF6860;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-bottom: 2%;
+    }
+    #printButton {
+        background-color: burlywood;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-bottom: 2%;
+    }
+    input,
+    button:hover {
+        cursor: pointer;
+    }
 }
 
-.grid-item-2 {
-    padding: 20px;
-    text-align: center;
-}
-
-.holderInputFields {
-    border-radius: 5px;
-    border: 1px solid grey;
-    margin-bottom: 2%;
-}
-
-#ui-datepicker-div {
-    background-color: whitesmoke;
-}
-
-.flexContainer {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.flexContainer>div {
-    width: 50%;
-    text-align: center;
-    margin-top: 2%;
-}
-
-.flexContainer2 {
-    display: flex;
-    flex-wrap: nowrap;
-    margin-bottom: 2%;
-}
-
-.flexContainer2>div {
-    margin: 5px;
-    width: 33.3%;
-    text-align: center;
-}
-
-.container {
-    margin: 10% 15% 15% 5%
-}
-
-.divH1 {
-    text-align: center;
-}
-
-.picDiv,
-.textDiv {
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-#deleteButton {
-    background-color: #FF6860;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    margin-bottom: 2%;
-}
-
-#printButton {
-    background-color: burlywood;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    margin-bottom: 2%;
-}
-
-input,
-button:hover {
-    cursor: pointer;
+@media (max-device-width: 1269px) {
+    #imgTagPixabay {
+        height: 100%;
+        width: 25%;
+    }
+    input {
+        height: 60px;
+        width: 50%;
+        background: #22b2da;
+        color: black;
+        font-size: 20px;
+        font-family: 'Oswald', sans-serif;
+        border: none;
+        text-align: center;
+    }
+    .grid-container-2 {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        padding: 10px;
+    }
+    .grid-item-2 {
+        padding: 20px;
+        text-align: center;
+    }
+    .holderInputFields {
+        border-radius: 5px;
+        border: 1px solid grey;
+        margin-bottom: 2%;
+    }
+    #ui-datepicker-div {
+        background-color: whitesmoke;
+    }
+    .flexContainer>div {
+        text-align: center;
+        margin-top: 2%;
+    }
+    .flexContainer2 {
+        margin-bottom: 2%;
+    }
+    .flexContainer2>div {
+        margin: 5px;
+        text-align: center;
+    }
+    .container {
+        margin: 10% 15% 15% 5%
+    }
+    .divH1 {
+        text-align: center;
+    }
+    .picDiv,
+    .textDiv {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    #deleteButton {
+        background-color: #FF6860;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-bottom: 2%;
+    }
+    #printButton {
+        background-color: burlywood;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-bottom: 2%;
+    }
+    input,
+    button:hover {
+        cursor: pointer;
+    }
 }
