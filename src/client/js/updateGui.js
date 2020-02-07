@@ -1,6 +1,3 @@
-import { deleteJourney } from './deleteJourney'
-import { printTravelData } from './printTravelData'
-
 async function updateGui(data) {
     let days;
 
@@ -14,37 +11,20 @@ async function updateGui(data) {
     if (data.countdown == 0) {
         document.getElementById('holderAnswerApi').style.borderradius = "5px";
         document.getElementById('holderAnswerApi').style.border = "1px solid grey";
-        const deleteButton = document.createElement("BUTTON");
-        deleteButton.setAttribute("id", "deleteButton");
-        deleteButton.innerHTML = "Delete current travel data";
-        document.getElementById("removeButton").appendChild(deleteButton);
 
-        const printButton = document.createElement("BUTTON");
-        printButton.setAttribute("id", "printButton");
-        printButton.innerHTML = "Print Travel Data"
-        document.getElementById("printTravelData").appendChild(printButton);
 
         document.getElementById('picDiv').innerHTML = `<img src="${data.imageUrl}" id="imgTagPixabay">`;
         document.getElementById('textDiv').innerHTML = `<p>${data.summary}</p>
-        <p>Temperature in ${data.city} will be ${data.temperature} Celcius.</p>
+        <p>Temperature in ${data.city} will be ${data.temperature} Fahrenheit.</p>
         <p>Your trip to ${data.city} starts tomorrow.</p>
         <p>Your trip will last in total ${data.duration} ${days}.</p>`;
     } else {
         document.getElementById('holderAnswerApi').style.borderradius = "5px";
         document.getElementById('holderAnswerApi').style.border = "1px solid grey";
-        const deleteButton = document.createElement("BUTTON");
-        deleteButton.setAttribute("id", "deleteButton");
-        deleteButton.innerHTML = "Delete current travel data";
-        document.getElementById("removeButton").appendChild(deleteButton);
-
-        const printButton = document.createElement("BUTTON");
-        printButton.setAttribute("id", "printButton");
-        printButton.innerHTML = "Print Travel Data"
-        document.getElementById("printTravelData").appendChild(printButton);
 
         document.getElementById('picDiv').innerHTML = `<img src="${data.imageUrl}" id="imgTagPixabay">`;
         document.getElementById('textDiv').innerHTML = `<p>${data.summary}</p>
-        <p>Temperature in ${data.city} will be ${data.temperature} Celcius.</p>
+        <p>Temperature in ${data.city} will be ${data.temperature} Fahrenheit.</p>
         <p>Your trip to ${data.city} starts in ${data.countdown} days.</p>
         <p>Your trip will last in total ${data.duration} ${days}.</p>`;
     }

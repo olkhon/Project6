@@ -32,5 +32,5 @@ import './styles/style.scss'
 
 
 export {
-    performAction,
+    performAction
 }
